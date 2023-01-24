@@ -9,13 +9,9 @@ Cloud2SQL sources and destinations are configured via a YAML configuration file.
 
 You can safely delete the sections that are not needed (e.g., you can delete the `aws` section if you do not use AWS).
 
-:::info
+## Sources
 
 **Cloud2SQL supports all sources supported by [Resoto](https://resoto.com).** By default, Cloud2SQL ships with AWS, Google Cloud, DigitalOcean, and Kubernetes source plugins pre-installed.
-
-:::
-
-## Sources
 
 ### AWS
 
