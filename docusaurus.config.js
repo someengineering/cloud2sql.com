@@ -122,6 +122,7 @@ const config = {
             label: 'Overview',
             to: '/docs',
             position: 'right',
+            activeBaseRegex: '/docs$',
           },
           {
             label: 'Installation',
