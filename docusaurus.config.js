@@ -57,21 +57,6 @@ const config = {
           remarkPlugins: [a11yEmoji, oembed],
         },
         blog: false,
-        // blog: {
-        //   blogTitle: 'News',
-        //   blogDescription: 'Cloud2SQL release notes and updates',
-        //   blogSidebarTitle: 'Announcements',
-        //   blogSidebarCount: 'ALL',
-        //   path: 'news',
-        //   routeBasePath: 'news',
-        //   archiveBasePath: null,
-        //   showReadingTime: false,
-        //   feedOptions: {
-        //     type: 'all',
-        //     copyright: `Copyright © ${new Date().getFullYear()} Some Engineering Inc.`,
-        //   },
-        //   remarkPlugins: [a11yEmoji],
-        // },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')],
         },
@@ -123,7 +108,7 @@ const config = {
       },
       announcementBar: {
         id: `announcementBar-${latestRelease.version}`, // Increment on change
-        content: `<span aria-label="star-struck" role="img">🤩</span> <a href="${latestRelease.link}">Check out what's new in Cloud2SQL ${latestRelease.version}</a>, and don't forget to <a href="https://github.com/someengineering/cloud2sql" target="_blank" rel="noopener noreferrer">star the project on GitHub</a>! <span aria-label="sparkles" role="img">✨</span>`,
+        content: `<span aria-label="star-struck" role="img">🤩</span> <a href="${latestRelease.link}">Cloud2SQL ${latestRelease.version}</a> is out! Don't forget to <a href="https://github.com/someengineering/cloud2sql" target="_blank" rel="noopener noreferrer">star the project on GitHub</a>! <span aria-label="sparkles" role="img">✨</span>`,
       },
       navbar: {
         hideOnScroll: true,
@@ -133,22 +118,25 @@ const config = {
           src: 'img/navbar-logo.svg',
         },
         items: [
-          // { to: '/news', label: 'News', position: 'right' },
           {
+            label: 'Overview',
             to: '/docs',
-            label: 'Docs',
             position: 'right',
-            type: 'dropdown',
-            items: [
-              {
-                label: 'Installation',
-                to: '/docs/installation',
-              },
-              {
-                label: 'Usage',
-                to: '/docs/usage',
-              },
-            ],
+          },
+          {
+            label: 'Installation',
+            to: '/docs/installation',
+            position: 'right',
+          },
+          {
+            label: 'Configuration',
+            to: '/docs/configuration',
+            position: 'right',
+          },
+          {
+            label: 'Usage',
+            to: '/docs/usage',
+            position: 'right',
           },
           {
             label: 'GitHub',
@@ -180,8 +168,16 @@ const config = {
             title: 'Documentation',
             items: [
               {
+                label: 'Overview',
+                to: '/docs',
+              },
+              {
                 label: 'Installation',
                 to: '/docs/installation',
+              },
+              {
+                label: 'Configuration',
+                to: '/docs/configuration',
               },
               {
                 label: 'Usage',
@@ -235,14 +231,6 @@ const config = {
       prism: {
         theme: require('prism-react-renderer/themes/github'),
         darkTheme: require('./src/utils/prismDark.js'),
-        additionalLanguages: [
-          'csv',
-          'ini',
-          'powershell',
-          'ruby',
-          'csharp',
-          'php',
-        ],
       },
       magicComments: [
         {

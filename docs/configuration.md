@@ -1,12 +1,19 @@
 ---
 sidebar_position: 3
+sidebar_label: "2. Configuration"
 ---
 
 # Configuration
 
 Cloud2SQL sources and destinations are configured via a YAML configuration file. Create your own configuration by modifying [`config-template.yaml`](https://github.com/someengineering/cloud2sql/blob/main/config-template.yaml).
 
-You can safely delete the sections that are not needed (e.g., you can delete the `aws` section if you do not use AWS). All sections refer to cloud providers and are enabled if a configuration section is provided.
+You can safely delete the sections that are not needed (e.g., you can delete the `aws` section if you do not use AWS).
+
+:::info
+
+**Cloud2SQL supports all sources supported by [Resoto](https://resoto.com).** By default, Cloud2SQL ships with AWS, Google Cloud, DigitalOcean, and Kubernetes source plugins pre-installed.
+
+:::
 
 ## Sources
 
@@ -32,6 +39,12 @@ sources:
     # Do not scrape current account
     do_not_scrape_current: false
 ```
+
+:::tip
+
+When collecting multiple accounts, the `role` and `scrape_org` options instruct Cloud2SQL to fetch the list of all organization accounts and specify a role to assume. Alternatively, you can specify the list of accounts to collect using the `profiles` option if those profiles have been defined in your [AWS CLI config file](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html).
+
+:::
 
 ### Google Cloud
 
@@ -76,6 +89,10 @@ digitalocean:
 ```
 
 ## Destinations
+
+Cloud2SQL uses [SQLAlchemy](https://sqlalchemy.org) to connect to a destination database.
+
+If your database is not listed below, you can check if it is supported in [SQLAlchemy Dialects](https://docs.sqlalchemy.org/en/20/dialects/index.html). If so, simply install the driver and use the connection string from the SQLAlchemy documentation.
 
 ### SQLite
 
@@ -160,17 +177,3 @@ destinations:
     format: csv
     batch_size: 100_000
 ```
-
-### My database is not listed here
-
-Cloud2SQL uses SQLAlchemy to connect to the database. If your database is not listed here, you can check if it is supported in [SQLAlchemy Dialects](https://docs.sqlalchemy.org/en/20/dialects/index.html). Install the relevant driver and use the connection string from the documentation.
-
-### Example
-
-We use a minimal configuration [example](https://github.com/someengineering/cloud2sql/blob/main//config-example.yaml) and export the data to a SQLite database. The example uses our AWS default credentials and the default kubernetes config.
-
-```bash
-cloud2sql --config config-example.yaml
-```
-
-For a more in-depth example, check out our [blog post](https://resoto.com/blog/2022/12/21/installing-cloud2sql).

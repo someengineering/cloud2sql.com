@@ -26,7 +26,7 @@ export default function Home(): JSX.Element {
           <p className={styles.buttons}>
             <InstallButton product="cloud2sql" includeVersion />
             <Link
-              to="https://github.com/someengineering/cloud2sql#readme"
+              to="/docs"
               className="button button--outline button--primary button--lg"
             >
               View Docs
