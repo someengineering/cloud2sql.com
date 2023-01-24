@@ -135,8 +135,8 @@ const config = {
             position: 'right',
           },
           {
-            label: 'Usage',
-            to: '/docs/usage',
+            label: 'Resource Collection',
+            to: '/docs/resource-collection',
             position: 'right',
           },
           {
@@ -181,8 +181,8 @@ const config = {
                 to: '/docs/configuration',
               },
               {
-                label: 'Usage',
-                to: '/docs/usage',
+                label: 'Resource Collection',
+                to: '/docs/resource-collection',
               },
             ],
           },
