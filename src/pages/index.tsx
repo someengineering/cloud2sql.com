@@ -4,7 +4,6 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import InstallButton from '@site/src/components/InstallButton';
 import NewsletterSignupForm from '@site/src/components/NewsletterSignupForm';
 import Layout from '@theme/Layout';
-import 'asciinema-player/dist/bundle/asciinema-player.css';
 import { clsx } from 'clsx';
 import React from 'react';
 import asciinemaCast from './asciinema/cloud2sql.cast';

@@ -5,13 +5,13 @@ sidebar_label: "2. Configuration"
 
 # Configuration
 
-Cloud2SQL sources and destinations are configured via a YAML configuration file. Create your own configuration by modifying [`config-template.yaml`](https://github.com/someengineering/cloud2sql/blob/main/config-template.yaml).
+Cloud2SQL sources and destinations are configured via a [YAML](https://yaml.org) configuration file. Create your own configuration by modifying [`config-template.yaml`](https://github.com/someengineering/cloud2sql/blob/main/config-template.yaml).
 
-You can safely delete the sections that are not needed (e.g., you can delete the `aws` section if you do not use AWS).
+You can safely delete the sections that are not needed (e.g., you can delete the `aws` section if you do not use <abbr title="Amazon Web Services">AWS</abbr>).
 
 ## Sources
 
-**Cloud2SQL supports all sources supported by [Resoto](https://resoto.com).** By default, Cloud2SQL ships with AWS, Google Cloud, DigitalOcean, and Kubernetes source plugins pre-installed.
+**Cloud2SQL supports all sources supported by [Resoto](https://resoto.com).** By default, Cloud2SQL ships with <abbr title="Amazon Web Services">AWS</abbr>, Google Cloud, DigitalOcean, and Kubernetes source plugins pre-installed.
 
 ### AWS
 
@@ -88,7 +88,7 @@ digitalocean:
 
 Cloud2SQL uses [SQLAlchemy](https://sqlalchemy.org) to connect to a destination database.
 
-If your database is not listed below, you can check if it is supported in [SQLAlchemy Dialects](https://docs.sqlalchemy.org/en/20/dialects/index.html). If so, simply install the driver and use the connection string from the SQLAlchemy documentation.
+If your database is not listed below, you can check if it is supported in [SQLAlchemy dialects](https://docs.sqlalchemy.org/en/20/dialects/index.html). If so, simply install the driver and use the connection string from the SQLAlchemy documentation.
 
 ### SQLite
 

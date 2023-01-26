@@ -295,19 +295,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-decoration: var(--ifm-link-hover-decoration);
 }
 
-.md-actions {
-  display: flex;
-  align-items: center;
-}
-
-.md-actions > * {
-  margin-right: 1rem;
-}
-
-.api-info {
-  display: none;
-}
-
 .tabs-container > .margin-top--md {
   margin-top: -3px !important;
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
@@ -390,10 +377,6 @@ button {
 }
 
 @media screen and (max-width: 996px) {
-  .version-selector .navbar__item {
-    display: inline-block;
-  }
-
   .navbar__items .navbar-icon-link > .navLinklabel {
     display: none;
   }

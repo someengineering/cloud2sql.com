@@ -1,4 +1,5 @@
 https://cloud2sql.netlify.app/*                                                       https://cloud2sql.com/:splat 301!
+https://cloud2sql.some.engineering/*                                                  https://cloud2sql.com/:splat 301!
 https://cloud2sql.resoto.com/*                                                        https://cloud2sql.com/:splat 301!
 
 https://docs.cloud2sql.com/*                                                          https://cloud2sql.com/docs/:splat 301!
