@@ -208,6 +208,19 @@ const config = {
             ],
           },
           {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                href: 'https://some.engineering/blog',
+              },
+              {
+                label: 'Releases',
+                href: 'https://github.com/someengineering/cloud2sql/releases',
+              },
+            ],
+          },
+          {
             title: 'Legal',
             items: [
               {
