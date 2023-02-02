@@ -78,6 +78,52 @@ const config = {
         }),
       };
     },
+    [
+      'pwa',
+      /** @type {import('@docusaurus/plugin-pwa').PluginOptions} */
+      {
+        debug: !isProd,
+        swRegister: false,
+        swCustom: require.resolve('./src/sw.js'),
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: 'site.webmanifest',
+          },
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: 'img/icon-192.maskable.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: 'img/icon-512.maskable.png',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#89d1f1',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes',
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#000d19',
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: 'img/apple-icon-180.png',
+          },
+        ],
+      },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -93,6 +139,11 @@ const config = {
       metadata: [
         {
           name: 'description',
+          content:
+            'Extract your infrastructure data to an SQL database. Open source and free to use.',
+        },
+        {
+          name: 'og:description',
           content:
             'Extract your infrastructure data to an SQL database. Open source and free to use.',
         },
