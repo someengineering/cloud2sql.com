@@ -239,12 +239,12 @@ const config = {
         ],
         copyright: `<span aria-label="owl" role="img">🦉</span> Copyright © ${new Date().getFullYear()} <a href="https://some.engineering" target="_blank" rel="noopener noreferrer">Some Engineering Inc</a>. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <span aria-label="dinosaur" role="img">🦖</span>`,
       },
-      // algolia: {
-      //   appId: '',
-      //   apiKey: '',
-      //   indexName: '',
-      //   contextualSearch: true,
-      // },
+      algolia: {
+        appId: '2WGFCSF82Z',
+        apiKey: '4a61af2ed0dfbc1211de1dfacb746adc',
+        indexName: 'cloud2sql',
+        contextualSearch: true,
+      },
       prism: {
         theme: require('prism-react-renderer/themes/github'),
         darkTheme: require('./src/utils/prismDark.js'),
