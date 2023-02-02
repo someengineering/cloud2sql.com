@@ -119,24 +119,27 @@ const config = {
         },
         items: [
           {
-            label: 'Overview',
+            label: 'Docs',
             to: '/docs',
             position: 'right',
-            activeBaseRegex: '/docs$',
+            items: [
+              {
+                label: 'Installation',
+                to: '/docs/installation',
+              },
+              {
+                label: 'Configuration',
+                to: '/docs/configuration',
+              },
+              {
+                label: 'Resource Collection',
+                to: '/docs/resource-collection',
+              },
+            ],
           },
           {
-            label: 'Installation',
-            to: '/docs/installation',
-            position: 'right',
-          },
-          {
-            label: 'Configuration',
-            to: '/docs/configuration',
-            position: 'right',
-          },
-          {
-            label: 'Resource Collection',
-            to: '/docs/resource-collection',
+            label: 'Blog',
+            href: 'https://some.engineering/blog',
             position: 'right',
           },
           {
