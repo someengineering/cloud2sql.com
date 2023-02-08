@@ -5,7 +5,6 @@ const a11yEmoji = require('@fec/remark-a11y-emoji');
 const oembed = require('remark-plugin-oembed');
 
 const latestRelease = require('./latestRelease.json');
-const keywords = require('./keywords.json');
 
 const isProd =
   process.env.NODE_ENV !== 'development' &&
@@ -139,19 +138,12 @@ const config = {
       metadata: [
         {
           name: 'description',
+          property: 'og:description',
           content:
             'Extract your infrastructure data to an SQL database. Open source and free to use.',
-        },
-        {
-          name: 'og:description',
-          content:
-            'Extract your infrastructure data to an SQL database. Open source and free to use.',
-        },
-        {
-          name: 'keywords',
-          content: keywords.join(','),
         },
         { property: 'og:type', content: 'website' },
+        { name: 'robots', content: 'nofollow' },
       ],
       tableOfContents: {
         minHeadingLevel: 2,
