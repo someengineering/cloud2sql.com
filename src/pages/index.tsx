@@ -1,5 +1,4 @@
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import InstallButton from '@site/src/components/InstallButton';
 import NewsletterSignupForm from '@site/src/components/NewsletterSignupForm';
@@ -10,17 +9,14 @@ import asciinemaCast from './asciinema/cloud2sql.cast';
 import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-
   return (
     <Layout>
       <header className={styles.hero}>
-        <h1 className={styles.siteTitle}>{siteConfig.title}</h1>
         <div className={styles.heroInner}>
           <div className={styles.tagline}>
             Discover Relationships Between Resources
           </div>
-          <h2 className={styles.heroTitle}>Cloud2SQL</h2>
+          <h1 className={styles.heroTitle}>Cloud2SQL</h1>
           <p>Extract your infrastructure data to an SQL database.</p>
           <p className={styles.buttons}>
             <InstallButton product="cloud2sql" includeVersion />
