@@ -98,7 +98,7 @@ div[class^='announcementBar_'] .close {
   font-size: 0;
   background-image: url('/img/navbar-logotext-dark.svg');
   background-size: auto 3rem;
-  background-position-x: 0.1rem;
+  background-position-x: 0.15rem;
   background-position-y: center;
   background-repeat: no-repeat;
 }
