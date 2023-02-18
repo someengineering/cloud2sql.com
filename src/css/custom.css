@@ -17,10 +17,10 @@
   --ifm-color-content: #0f3356;
   --ifm-color-content-secondary: var(--ifm-color-primary-lightest);
   --ifm-link-color: var(--ifm-color-primary-lighter);
-  --ifm-color-primary-contrast-background: #ebf2fc;
+  --ifm-color-primary-contrast-background: #f5edff;
   --ifm-color-primary-contrast-foreground: var(--ifm-color-primary-darkest);
-  --ifm-highlight-color: #e59010;
-  --ifm-highlight-color-secondary: #e59010;
+  --ifm-highlight-color: #762dd7;
+  --ifm-highlight-color-secondary: #762dd7;
   --ifm-heading-color: var(--ifm-color-primary);
   --ifm-font-size-base: 105%;
   --ifm-font-family-base: 'Barlow', sans-serif;
@@ -48,10 +48,10 @@ html[data-theme='dark'] {
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: var(--ifm-color-primary-lightest);
   --ifm-link-color: var(--ifm-color-primary-lighter);
-  --ifm-color-primary-contrast-background: #000d19;
+  --ifm-color-primary-contrast-background: #0f061c;
   --ifm-color-primary-contrast-foreground: var(--ifm-color-primary-lightest);
-  --ifm-highlight-color: #ffe797;
-  --ifm-highlight-color-secondary: #ffaf37;
+  --ifm-highlight-color: #c892f8;
+  --ifm-highlight-color-secondary: #af62f5;
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
 }
 
@@ -83,10 +83,28 @@ div[class^='announcementBar_'] .close {
   margin-right: 1.5rem;
 }
 
+.navbar__brand {
+  margin-right: 1.5rem;
+}
+
+.navbar__logo {
+  margin: 0;
+  height: 2.25rem;
+}
+
 .navbar__title {
-  font-size: 1.5em;
-  line-height: 1.25;
-  font-weight: 700;
+  height: 2.25rem;
+  width: 8.2rem;
+  font-size: 0;
+  background-image: url('/img/navbar-logotext-dark.svg');
+  background-size: auto 3rem;
+  background-position-x: 0.1rem;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+html[data-theme='dark'] .navbar__title {
+  background-image: url('/img/navbar-logotext-light.svg');
 }
 
 .navbar__title:hover {
