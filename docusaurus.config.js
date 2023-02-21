@@ -140,7 +140,7 @@ const config = {
           name: 'description',
           property: 'og:description',
           content:
-            'Extract your infrastructure data to an SQL database. Open source and free to use.',
+            'Extract your infrastructure data to a SQL database. Open source and free to use.',
         },
         { property: 'og:type', content: 'website' },
         { name: 'robots', content: 'nofollow' },
