@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
             Discover Relationships Between Resources
           </div>
           <h1 className={styles.heroTitle}>Cloud2SQL</h1>
-          <p>Extract your infrastructure data to an SQL database.</p>
+          <p>Extract your infrastructure data to a SQL database.</p>
           <p className={styles.buttons}>
             <InstallButton product="cloud2sql" includeVersion />
             <Link
