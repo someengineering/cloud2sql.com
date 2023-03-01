@@ -47,7 +47,7 @@
     "url-loader": "4.1.1",
     "workbox-routing": "6.5.4",
     "workbox-strategies": "6.5.4",
-    "yup": "1.0.0"
+    "yup": "1.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
@@ -55,13 +55,13 @@
     "@docusaurus/module-type-aliases": "2.3.1",
     "@tsconfig/docusaurus": "1.0.6",
     "@types/node-fetch": "2.6.2",
-    "@typescript-eslint/eslint-plugin": "5.53.0",
-    "@typescript-eslint/parser": "5.53.0",
-    "asciinema-player": "3.1.0",
+    "@typescript-eslint/eslint-plugin": "5.54.0",
+    "@typescript-eslint/parser": "5.54.0",
+    "asciinema-player": "3.1.1",
     "commitizen": "4.3.0",
-    "eslint": "8.34.0",
+    "eslint": "8.35.0",
     "eslint-config-prettier": "8.6.0",
-    "eslint-plugin-formatjs": "4.7.2",
+    "eslint-plugin-formatjs": "4.9.0",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.32.2",
