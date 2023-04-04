@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 
 type AsciinemaPlayerProps = {
   src: string;
+  className?: string;
   cols?: string;
   rows?: string;
   autoPlay?: boolean;
@@ -20,6 +21,7 @@ type AsciinemaPlayerProps = {
 
 const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
   src,
+  className,
   ...asciinemaOptions
 }) => {
   return (
@@ -41,7 +43,7 @@ const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
         return (
           <div
             ref={ref}
-            className={`video-container shadow--tl ${
+            className={`video-container shadow--tl ${className ?? ''} ${
               asciinemaOptions.autoPlay && asciinemaOptions.loop
                 ? 'noControls'
                 : ''
