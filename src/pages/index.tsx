@@ -70,7 +70,7 @@ export default function Home(): JSX.Element {
               <img
                 src="img/homepage/purpl.png"
                 loading="lazy"
-                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 991px) 740px, 100vw"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
                 srcSet="img/homepage/purpl-p-500.png 500w, img/homepage/purpl-p-800.png 800w, img/homepage/purpl.png 958w"
                 alt=""
                 className={styles['image-6']}
@@ -87,7 +87,7 @@ export default function Home(): JSX.Element {
               <img
                 src="img/homepage/margin.png"
                 loading="lazy"
-                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 991px) 740px, 100vw"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
                 srcSet="img/homepage/margin-p-500.png 500w, img/homepage/margin-p-800.png 800w, img/homepage/margin.png 864w"
                 alt=""
                 className={styles['image-7']}
@@ -96,7 +96,7 @@ export default function Home(): JSX.Element {
               <img
                 src="img/homepage/cian.png"
                 loading="lazy"
-                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 991px) 740px, 100vw"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
                 srcSet="img/homepage/cian-p-500.png 500w, img/homepage/cian-p-800.png 800w, img/homepage/cian.png 1049w"
                 alt=""
                 className={styles['image-5']}
@@ -150,7 +150,7 @@ export default function Home(): JSX.Element {
                 <p className={styles['paragraph-2']}>
                   <span className={styles['text-span-2']}>
                     Cloud2SQL is built on top of the Resoto collectors.
-                  </span>
+                  </span>{' '}
                   What sets Resoto apart from other cloud data collection tools
                   is its ability to enrich the data it collects and make
                   additional connections. This means that Resoto not only
@@ -203,7 +203,7 @@ export default function Home(): JSX.Element {
             <img
               src="img/homepage/cian.png"
               loading="lazy"
-              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 991px) 640px, (max-width: 1049px) 100vw, 1049px"
+              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 1320px) 640px, (max-width: 1049px) 100vw, 1049px"
               srcSet="img/homepage/cian-p-500.png 500w, img/homepage/cian-p-800.png 800w, img/homepage/cian.png 1049w"
               alt=""
               className={styles['image-3']}
@@ -211,7 +211,7 @@ export default function Home(): JSX.Element {
             <img
               src="img/homepage/margin.png"
               loading="lazy"
-              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 991px) 640px, 864px"
+              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 1320px) 640px, 864px"
               srcSet="img/homepage/margin-p-500.png 500w, img/homepage/margin-p-800.png 800w, img/homepage/margin.png 864w"
               alt=""
               className={styles['image-2']}
