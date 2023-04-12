@@ -229,7 +229,6 @@ html[data-w-dynpage] [data-w-cloak] {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
@@ -1931,9 +1930,6 @@ textarea.w-select {
   position: static;
   width: 600px;
   height: 369px;
-  background-position: 50% 50%;
-  background-size: 100%;
-  background-repeat: no-repeat;
 }
 
 .maskot_top {
@@ -2610,8 +2606,6 @@ textarea.w-select {
     right: -360px;
     width: 923px;
     height: 564px;
-    background-size: 924px;
-    background-repeat: no-repeat;
   }
 
   .big_cloud.centre {
@@ -2895,14 +2889,10 @@ textarea.w-select {
     right: auto;
     bottom: auto;
     height: 360px;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
   }
 
   .big_cloud.centre {
     margin-top: 60px;
-    background-position: 0% 50%;
-    background-size: auto 100%;
   }
 
   .maskot_top {
