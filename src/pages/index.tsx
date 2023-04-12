@@ -1,9 +1,11 @@
 import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import Layout from '@theme/Layout';
 import { clsx } from 'clsx';
 import React from 'react';
-import asciinemaCast from './asciinema/cloud2sql.cast';
+import installCast from './asciinema/cloud2sql-install.cast';
+import cloud2sqlCast from './asciinema/cloud2sql.cast';
 import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
@@ -38,21 +40,22 @@ export default function Home(): JSX.Element {
               Cloud2SQL, you get deep insights into your resources and
               dependencies, to a destination of your choice.
             </p>
-            <div className={styles.tag_b}></div>
-            <div className={styles.tag_a}></div>
+            <div className={styles.cloud_small}>
+              cloud2sql --config aws.yaml
+            </div>
             <div className={styles.maskot_top}></div>
             <AsciinemaPlayer
-              src={asciinemaCast}
+              src={cloud2sqlCast}
               className={styles.big_cloud}
-              cols={80}
-              rows={20}
+              cols={75}
+              rows={18}
               preload={true}
               autoPlay={true}
               loop={true}
             />
             <div className={styles['div-block']}></div>
-            <a
-              href="#"
+            <Link
+              to="/docs/installation"
               className={clsx(styles.coolbutton, styles['w-inline-block'])}
             >
               <div className={styles.arrow_a}></div>
@@ -60,7 +63,7 @@ export default function Home(): JSX.Element {
               <div className={styles['text-block']}>
                 Get started in under 5 Minutes!
               </div>
-            </a>
+            </Link>
             <div className={styles.bims_top}></div>
           </div>
         </div>
@@ -169,8 +172,8 @@ export default function Home(): JSX.Element {
                   Set up Cloud2SQL in under 5 minutes
                 </h2>
                 <div className={styles._5minutas}></div>
-                <a
-                  href="#"
+                <Link
+                  to="/docs/installation"
                   className={clsx(
                     styles.coolbutton,
                     styles._2,
@@ -182,14 +185,17 @@ export default function Home(): JSX.Element {
                     Get started
                   </div>
                   <div className={clsx(styles.arrow_b, styles._2)}></div>
-                </a>
+                </Link>
                 <div className={styles.button_back}></div>
               </div>
+              <div className={styles.cloud_small_b}>
+                pip3 install --user cloud2sql[all]
+              </div>
               <AsciinemaPlayer
-                src={asciinemaCast}
+                src={installCast}
                 className={clsx(styles.big_cloud, styles.centre)}
-                cols={80}
-                rows={20}
+                cols={75}
+                rows={18}
                 preload={true}
                 autoPlay={true}
                 loop={true}

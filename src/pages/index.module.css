@@ -1772,7 +1772,7 @@ textarea.w-select {
   z-index: 30;
   width: 625px;
   margin-top: 68px !important;
-  margin-bottom: 32px;
+  margin-bottom: 32px !important;
   color: #ffffff;
   font-size: 92px;
   line-height: 110px;
@@ -1917,14 +1917,14 @@ textarea.w-select {
   z-index: 20;
   width: 648px;
   height: 395px;
-  background-position: 0px 0px;
-  background-size: 648px;
+  max-width: none;
   background-color: rgb(18, 19, 20);
   padding: 8px;
   border-style: solid;
   border-width: 3px;
   border-color: #89d1f1;
   border-radius: 32px;
+  margin: 0;
 }
 
 .big_cloud.centre {
@@ -1951,38 +1951,26 @@ textarea.w-select {
   background-repeat: no-repeat;
 }
 
-.tag_a {
+.cloud_small {
   position: absolute;
   left: auto;
-  top: -20px;
-  right: 150px;
+  top: 50px;
+  right: 320px;
   bottom: auto;
   z-index: 60;
-  width: 102px;
-  height: 37px;
-  background-image: url('/img/homepage/Tag_A.svg');
-  background-position: 0px 0px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
-.tag_b {
-  position: absolute;
-  left: auto;
-  top: 380px;
-  right: 50px;
-  bottom: auto;
-  z-index: 62;
-  width: 89px;
-  height: 37px;
-  background-image: url('/img/homepage/Tag_B.svg');
-  background-position: 0px 0px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  width: 273px;
+  height: 70px;
+  background-color: rgb(18, 19, 20);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #89d1f1;
+  border-radius: 18px;
+  color: #ffffff;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 14px;
 }
 
 .middle_section {
@@ -2148,6 +2136,7 @@ textarea.w-select {
   display: flex;
   width: 2000px;
   height: 1px;
+  margin: 0 auto;
 }
 
 .mockup {
@@ -2260,6 +2249,28 @@ textarea.w-select {
   background-position: 0px 0px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.cloud_small_b {
+  position: absolute;
+  left: auto;
+  top: 150px;
+  right: -46px;
+  bottom: auto;
+  z-index: 50;
+  width: 305px;
+  height: 70px;
+  background-color: rgb(18, 19, 20);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #89d1f1;
+  border-radius: 18px;
+  color: #ffffff;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 14px;
 }
 
 ._5minutas {
@@ -2517,7 +2528,7 @@ textarea.w-select {
 
   .heading {
     width: 734px;
-    margin-top: 133px;
+    margin-top: 133px !important;
     font-size: 108px;
     line-height: 130px;
     margin: 0.67em 0;
@@ -2615,17 +2626,12 @@ textarea.w-select {
     height: 531px;
   }
 
-  .tag_a {
-    width: 140px;
-    height: 55px;
-  }
-
-  .tag_b {
-    top: 540px;
-    width: 130px;
-    height: 55px;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+  .cloud_small {
+    right: 480px;
+    width: 414px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 22px;
   }
 
   .middle_section {
@@ -2754,6 +2760,14 @@ textarea.w-select {
     top: -100px;
     width: 640px;
     height: 581px;
+  }
+
+  .cloud_small_b {
+    right: -60px;
+    width: 456px;
+    height: 92px;
+    line-height: 92px;
+    font-size: 22px;
   }
 
   ._5minutas {
@@ -2886,7 +2900,6 @@ textarea.w-select {
   }
 
   .big_cloud.centre {
-    height: 300px;
     margin-top: 60px;
     background-position: 0% 50%;
     background-size: auto 100%;
@@ -2901,20 +2914,14 @@ textarea.w-select {
     height: 360px;
   }
 
-  .tag_a {
-    left: 520px;
-    top: 380px;
+  .cloud_small {
+    left: 360px;
+    top: 440px;
     right: auto;
     bottom: auto;
-    height: 34px;
-  }
-
-  .tag_b {
-    left: 600px;
-    top: 740px;
-    right: auto;
-    bottom: auto;
-    height: 32px;
+    width: 240px;
+    height: 60px;
+    line-height: 60px;
   }
 
   .flow_select {
@@ -2992,6 +2999,13 @@ textarea.w-select {
     top: 340px;
     width: 500px;
     height: 500px;
+  }
+
+  .cloud_small_b {
+    left: 400px;
+    top: 400px;
+    right: auto;
+    bottom: auto;
   }
 
   ._5minutas {
@@ -3178,14 +3192,13 @@ textarea.w-select {
     height: 300px;
   }
 
-  .tag_a {
-    left: 380px;
-    top: 245px;
-  }
-
-  .tag_b {
-    left: 420px;
-    top: 540px;
+  .cloud_small {
+    left: 240px;
+    top: 330px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 11px;
   }
 
   .flow_select {
@@ -3275,6 +3288,11 @@ textarea.w-select {
     top: 420px;
     width: 320px;
     height: 400px;
+  }
+
+  .cloud_small_b {
+    left: 20px;
+    font-size: 11px;
   }
 
   ._5minutas {
@@ -3496,18 +3514,10 @@ textarea.w-select {
     height: 220px;
   }
 
-  .tag_a {
-    left: 245px;
-    top: 180px;
-    width: 80px;
-    height: 28px;
-  }
-
-  .tag_b {
-    left: 220px;
-    top: 440px;
-    width: 70px;
-    height: 28px;
+  .cloud_small {
+    left: 170px;
+    top: 300px;
+    width: 160px;
   }
 
   .flow_select {
@@ -3626,6 +3636,13 @@ textarea.w-select {
     top: 400px;
     width: 220px;
     height: 320px;
+  }
+
+  .cloud_small_b {
+    top: 300px;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
   }
 
   ._5minutas {
