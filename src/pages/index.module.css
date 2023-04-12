@@ -2109,7 +2109,7 @@ textarea.w-select {
 .text-block-4 {
   width: 280px;
   font-size: 20px;
-  font-weight: 600;
+  font-family: var(--ifm-font-family-monospace);
   color: #ffffff;
 }
 
