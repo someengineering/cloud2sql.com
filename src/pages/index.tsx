@@ -294,6 +294,14 @@ export default function Home(): JSX.Element {
                               styles['text-field'],
                               styles['w-input']
                             )}
+                            style={
+                              errors.email
+                                ? {
+                                    borderColor: 'var(--ifm-color-danger)',
+                                    borderWidth: '2px',
+                                  }
+                                : null
+                            }
                           />
                           <div className={styles['div-block-4']}></div>
                           <button

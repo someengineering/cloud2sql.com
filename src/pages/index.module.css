@@ -1797,6 +1797,10 @@ textarea.w-select {
   border-width: 0;
 }
 
+.coolbutton:hover {
+  opacity: 0.75;
+}
+
 .coolbutton[disabled] {
   opacity: 0.6;
 }
