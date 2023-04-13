@@ -88,7 +88,6 @@ export default function Home(): JSX.Element {
               autoPlay={true}
               loop={true}
             />
-            <div className={styles['div-block']}></div>
             <Link
               to="/docs/installation"
               className={clsx(styles.coolbutton, styles['w-inline-block'])}
@@ -99,6 +98,7 @@ export default function Home(): JSX.Element {
                 Get started in under 5 Minutes!
               </div>
             </Link>
+            <div className={styles['div-block']}></div>
             <div className={styles.bims_top}></div>
           </div>
         </div>
@@ -303,7 +303,6 @@ export default function Home(): JSX.Element {
                                 : null
                             }
                           />
-                          <div className={styles['div-block-4']}></div>
                           <button
                             type="submit"
                             className={clsx(
@@ -325,6 +324,7 @@ export default function Home(): JSX.Element {
                               Subscribe
                             </span>
                           </button>
+                          <div className={styles['div-block-4']}></div>
                         </div>
                         <input
                           type="hidden"
