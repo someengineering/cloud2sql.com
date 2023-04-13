@@ -2,13 +2,48 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import Layout from '@theme/Layout';
-import { clsx } from 'clsx';
-import React from 'react';
+import clsx from 'clsx';
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react';
+import {
+  Honeypot,
+  NetlifyFormComponent,
+  NetlifyFormProvider,
+  useNetlifyForm,
+} from 'react-netlify-forms';
+import * as Yup from 'yup';
 import installCast from './asciinema/cloud2sql-install.cast';
 import cloud2sqlCast from './asciinema/cloud2sql.cast';
 import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
+  const netlify = useNetlifyForm({
+    name: 'newsletter-signup',
+    honeypotName: 'bot-field',
+    onSuccess: () => {
+      // eslint-disable-next-line no-console
+      console.log('Successfully sent form data to Netlify Server');
+    },
+  });
+
+  const { handleSubmit, handleChange, handleBlur, errors, values } = useFormik({
+    initialValues: {
+      email: '',
+      referrer_url: '',
+    },
+    onSubmit: (values) => netlify.handleSubmit(null, values),
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .nullable()
+        .required('Please provide a valid email address')
+        .email('Please provide a valid email address'),
+    }),
+  });
+
+  useEffect(() => {
+    values.referrer_url = window.location.href;
+  }, []);
+
   return (
     <>
       <Head>
@@ -107,7 +142,7 @@ export default function Home(): JSX.Element {
               <div className={styles.flow_treeple}>
                 <div className={styles.flow}>
                   <div className={styles['text-block-3']}>
-                    Unused EBS volumes
+                    Unused EBS Volumes
                   </div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
@@ -127,7 +162,7 @@ export default function Home(): JSX.Element {
                 </div>
                 <div className={styles.flow}>
                   <div className={styles['text-block-3']}>
-                    Unused EBS volumes
+                    Unused EBS Volumes
                   </div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
@@ -227,64 +262,72 @@ export default function Home(): JSX.Element {
             <div className={styles.contact_left}>
               <h1 className={styles['heading-3']}>Resoto Newsletter</h1>
               <div className={styles['w-form']}>
-                <form
-                  id="wf-form-Your-comment"
-                  name="wf-form-Your-comment"
-                  data-name="Your comment"
-                  method="get"
-                  className={styles.form}
-                >
-                  <input
-                    type="text"
-                    className={clsx(styles['text-field'], styles['w-input'])}
-                    maxLength={256}
-                    name="name"
-                    data-name="Name"
-                    placeholder="Name"
-                    id="name"
-                  />
-                  <input
-                    type="email"
-                    className={clsx(styles['text-field'], styles['w-input'])}
-                    maxLength={256}
-                    name="Email"
-                    data-name="Email"
-                    placeholder="Email"
-                    id="Email"
-                  />
-                  <div className={styles['div-block-4']}></div>
-                  <input
-                    type="submit"
-                    value="Submit"
-                    data-wait="Please wait..."
-                    className={clsx(
-                      styles['submit-button'],
-                      styles['w-button']
-                    )}
-                  />
-                  <a
-                    href="#"
-                    className={clsx(
-                      styles.coolbutton,
-                      styles.contucts,
-                      styles['w-inline-block']
-                    )}
+                <NetlifyFormProvider {...netlify}>
+                  <NetlifyFormComponent
+                    onSubmit={handleSubmit}
+                    className={styles.form}
                   >
-                    <div className={clsx(styles.arrow_a, styles._3)}></div>
-                    <div className={clsx(styles.arrow_b, styles._3)}></div>
-                    <div className={clsx(styles['text-block'], styles._3)}>
-                      Subscribe
-                    </div>
-                  </a>
-                </form>
-                <div className={styles['w-form-done']}>
-                  <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div className={styles['w-form-fail']}>
-                  <div>
-                    Oops! Something went wrong while submitting the form.
-                  </div>
-                </div>
+                    <Honeypot />
+                    {netlify.success ? (
+                      <div className={styles['w-form-done']}>
+                        <div>
+                          Thank you for signing up! Please check your inbox to
+                          confirm your subscription.
+                        </div>
+                      </div>
+                    ) : netlify.error ? (
+                      <div className={styles['w-form-fail']}>
+                        <div>Oops! Something went wrong.</div>
+                      </div>
+                    ) : (
+                      <>
+                        <div>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.email}
+                            placeholder="Email address"
+                            className={clsx(
+                              styles['text-field'],
+                              styles['w-input']
+                            )}
+                          />
+                          <div className={styles['div-block-4']}></div>
+                          <button
+                            type="submit"
+                            className={clsx(
+                              styles.coolbutton,
+                              styles.contucts,
+                              styles['w-inline-block']
+                            )}
+                            disabled={netlify.submitting || errors.email}
+                          >
+                            <span
+                              className={clsx(styles.arrow_a, styles._3)}
+                            ></span>
+                            <span
+                              className={clsx(styles.arrow_b, styles._3)}
+                            ></span>
+                            <span
+                              className={clsx(styles['text-block'], styles._3)}
+                            >
+                              Subscribe
+                            </span>
+                          </button>
+                        </div>
+                        <input
+                          type="hidden"
+                          name="referrer_url"
+                          id="referrer_url"
+                          value={values.referrer_url}
+                        />
+                      </>
+                    )}
+                  </NetlifyFormComponent>
+                </NetlifyFormProvider>
               </div>
             </div>
           </div>

@@ -208,13 +208,11 @@ html[data-w-dynpage] [data-w-cloak] {
   margin: 0 0 15px;
 }
 .w-form-done {
-  display: none;
   padding: 20px;
   text-align: center;
   background-color: #dddddd;
 }
 .w-form-fail {
-  display: none;
   margin-top: 10px;
   padding: 10px;
   background-color: #ffdede;
@@ -1796,6 +1794,11 @@ textarea.w-select {
   background-color: #762dd7;
   color: #fff !important;
   text-decoration: none !important;
+  border-width: 0;
+}
+
+.coolbutton[disabled] {
+  opacity: 0.6;
 }
 
 .coolbutton._2 {
@@ -1824,7 +1827,7 @@ textarea.w-select {
 }
 
 .arrow_a._3 {
-  left: 241px;
+  left: 220px;
 }
 
 .arrow_b {
@@ -1845,7 +1848,7 @@ textarea.w-select {
 }
 
 .arrow_b._3 {
-  left: 241px;
+  left: 220px;
 }
 
 .gap {
@@ -1876,7 +1879,7 @@ textarea.w-select {
 }
 
 .text-block._3 {
-  margin-left: 295px;
+  margin-left: 50px;
 }
 
 .div-block {
