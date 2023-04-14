@@ -243,7 +243,7 @@ export default function Home(): JSX.Element {
                 <div className={styles.button_back}></div>
               </div>
               <div className={styles.cloud_small_b}>
-                pip3 install --user cloud2sql[all]
+                pip3 install --user &apos;cloud2sql[all]&apos;
               </div>
               <AsciinemaPlayer
                 src={installCast}

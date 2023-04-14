@@ -25,11 +25,27 @@ The installation process will take a couple of minutes.
 
 ## Python pip
 
-**Python 3.9+ is required.** Create a new virtual environment and install the `cloud2sql[all]` package:
+**Python 3.9+ and [pip](https://pip.pypa.io/) are required.** If your system has Python 3.9+ but not pip, you can install pip using the command `python3 -m ensurepip`.
+
+Install the `cloud2sql[all]` package:
+
+### User Installation
 
 ```bash
-$ pip3 install --user cloud2sql[all]
+$ pip3 install --user 'cloud2sql[all]'
 ```
+
+This will install the `cloud2sql` command to `~/.local/bin/` on Linux, `/Users/lukas/Library/Python/3.<version>/bin/` on macOS or `%APPDATA%\Python\bin\` on Windows. Make sure those directories are part of your `PATH` environment variable. If you are unsure where pip installs user packages, you can run `python3 -m site --user-base` to find out. The binaries will be in the `bin` subdirectory of the path returned by the command.
+
+### Alternative: Virtual Env Installation
+
+```bash
+$ python3 -m venv cloud2sql-venv
+$ source cloud2sql-venv/bin/activate
+$ pip3 install 'cloud2sql[all]'
+```
+
+This will install the `cloud2sql` command to the `cloud2sql-venv` virtual environment, which can be activated using the `source cloud2sql-venv/bin/activate` command.
 
 :::note
 
