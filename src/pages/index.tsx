@@ -4,7 +4,9 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import { useFormik } from 'formik';
+import { motion, useAnimation } from 'framer-motion';
 import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Honeypot,
   NetlifyFormComponent,
@@ -16,7 +18,14 @@ import installCast from './asciinema/cloud2sql-install.cast';
 import cloud2sqlCast from './asciinema/cloud2sql.cast';
 import styles from './index.module.css';
 
+const fadeInRtoL = {
+  visible: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { x: 1000, opacity: 0, scale: 1 },
+};
+
 export default function Home(): JSX.Element {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
   const netlify = useNetlifyForm({
     name: 'newsletter-signup',
     honeypotName: 'bot-field',
@@ -43,6 +52,14 @@ export default function Home(): JSX.Element {
   useEffect(() => {
     values.referrer_url = window.location.href;
   }, []);
+
+  useEffect(() => {
+    if (inView) {
+      control.start('visible');
+    } else {
+      control.start('hidden');
+    }
+  }, [control, inView]);
 
   return (
     <>
@@ -80,7 +97,13 @@ export default function Home(): JSX.Element {
             <div className={styles.cloud_small}>
               cloud2sql --config aws.yaml
             </div>
-            <div className={styles.maskot_top}></div>
+            <motion.div
+              className={styles.maskot_top}
+              ref={ref}
+              variants={fadeInRtoL}
+              initial="hidden"
+              animate={control}
+            ></motion.div>
             <AsciinemaPlayer
               src={cloud2sqlCast}
               className={styles.big_cloud}
