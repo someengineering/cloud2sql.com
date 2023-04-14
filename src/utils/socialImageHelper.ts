@@ -15,7 +15,7 @@ export const getImage = ({
     : null;
 
   if (title) {
-    return `https://og.some.engineering/api/image?theme=some-engineering&darkMode=0&title=${encodeURIComponent(
+    return `https://og.some.engineering/api/image?theme=cloud2sql&darkMode=0&title=${encodeURIComponent(
       title
     )}${metadata ? `&metadata=${encodeURIComponent(metadata)}` : ''}${
       author
@@ -30,5 +30,5 @@ export const getImage = ({
     }`;
   }
 
-  return 'https://og.some.engineering/api/image?theme=some-engineering&darkMode=0&title=Cloud2SQL&metadata=by%20Some%20Engineering%20Inc.';
+  return 'https://og.some.engineering/api/image?theme=cloud2sql&darkMode=0&title=%20&metadata=by%20Some%20Engineering%20Inc.';
 };

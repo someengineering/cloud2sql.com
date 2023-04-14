@@ -184,7 +184,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image:
-        'https://og.some.engineering/api/image?theme=some-engineering&darkMode=0&title=Cloud2SQL&metadata=by%20Some%20Engineering%20Inc.',
+        'https://og.some.engineering/api/image?theme=cloud2sql&darkMode=0&title=%20&metadata=by%20Some%20Engineering%20Inc.',
       docs: {
         sidebar: {
           autoCollapseCategories: true,

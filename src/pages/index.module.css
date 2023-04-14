@@ -1803,7 +1803,7 @@ textarea.w-select {
 .coolbutton:hover + .div-block,
 .coolbutton:hover + .button_back,
 .coolbutton:not([disabled]):hover + .div-block-4 {
-  background-color: rgb(220, 171, 228);
+  background-color: #dcabe4;
 }
 
 .coolbutton[disabled] {
