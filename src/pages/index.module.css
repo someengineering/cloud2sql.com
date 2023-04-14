@@ -2286,6 +2286,7 @@ textarea.w-select {
   overflow: hidden;
   height: auto;
   padding-top: 230px;
+  padding-bottom: 230px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -3207,6 +3208,7 @@ textarea.w-select {
   .contuctusfooter {
     padding-top: 120px;
     padding-left: 0px;
+    padding-bottom: 120px;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -3214,7 +3216,7 @@ textarea.w-select {
   }
 
   .contact_div {
-    height: 1100px;
+    height: 700px;
     margin-left: 40px;
     padding-left: 0px;
   }
@@ -3225,7 +3227,7 @@ textarea.w-select {
 
   .bg_contuct {
     left: 40px;
-    top: 686px;
+    top: 386px;
     height: 280px;
   }
 
@@ -3246,13 +3248,14 @@ textarea.w-select {
 
   .mascot_footer {
     left: 140px;
+    top: 360px;
     width: 200px;
     height: 320px;
   }
 
   .bims_footer {
     left: 150px;
-    width: 320px;
+    top: 420px;
     height: 300px;
     background-size: 100%;
   }
@@ -3323,6 +3326,7 @@ textarea.w-select {
     width: 300px;
     height: 52px;
     max-width: none;
+    margin-top: 42px;
   }
 
   .coolbutton._2 {
@@ -3538,13 +3542,13 @@ textarea.w-select {
   }
 
   .contact_div {
-    height: 900px;
+    height: 550px;
     margin-left: auto;
   }
 
   .bg_contuct {
     left: 20px;
-    top: 600px;
+    top: 350px;
     height: 200px;
   }
 
@@ -3575,13 +3579,13 @@ textarea.w-select {
 
   .mascot_footer {
     left: 80px;
-    top: 535px;
+    top: 285px;
     width: 170px;
     height: 280px;
   }
 
   .bims_footer {
-    top: 600px;
+    top: 350px;
     width: 200px;
     height: 200px;
   }

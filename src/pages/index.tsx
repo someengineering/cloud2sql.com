@@ -257,7 +257,6 @@ export default function Home(): JSX.Element {
         </div>
         <div className={clsx(styles.contuctusfooter, styles['wf-section'])}>
           <div className={styles.contact_div}>
-            <div className={styles.bg_contuct}></div>
             <img
               src="img/homepage/cian.png"
               loading="lazy"
@@ -274,6 +273,7 @@ export default function Home(): JSX.Element {
               alt=""
               className={styles['image-2']}
             />
+            <div className={styles.bg_contuct}></div>
             <div className={styles.bims_footer}></div>
             <div className={styles.mascot_footer}></div>
             <div className={styles.contact_left}>
