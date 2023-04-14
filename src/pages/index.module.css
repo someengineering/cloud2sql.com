@@ -3327,6 +3327,7 @@ textarea.w-select {
 
   .coolbutton._2 {
     width: 240px;
+    margin-top: 32px;
   }
 
   .coolbutton.contucts {
@@ -3470,7 +3471,8 @@ textarea.w-select {
     top: -140px;
   }
 
-  .centre_a {
+  .centre_a,
+  .contact_div {
     padding-right: 16px;
     padding-left: 16px;
   }
@@ -3620,5 +3622,12 @@ textarea.w-select {
     top: auto;
     right: auto;
     bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cloud_small,
+  .cloud_small_b {
+    display: none;
   }
 }

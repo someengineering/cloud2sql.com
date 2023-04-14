@@ -277,7 +277,10 @@ export default function Home(): JSX.Element {
             <div className={styles.bims_footer}></div>
             <div className={styles.mascot_footer}></div>
             <div className={styles.contact_left}>
-              <h1 className={styles['heading-3']}>Resoto Newsletter</h1>
+              <h1 className={styles['heading-3']}>
+                Resoto <br />
+                Newsletter
+              </h1>
               <div className={styles['w-form']}>
                 <NetlifyFormProvider {...netlify}>
                   <NetlifyFormComponent
