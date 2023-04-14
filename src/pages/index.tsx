@@ -1,15 +1,49 @@
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
-import InstallButton from '@site/src/components/InstallButton';
-import NewsletterSignupForm from '@site/src/components/NewsletterSignupForm';
 import Layout from '@theme/Layout';
-import { clsx } from 'clsx';
-import React from 'react';
-import asciinemaCast from './asciinema/cloud2sql.cast';
+import clsx from 'clsx';
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react';
+import {
+  Honeypot,
+  NetlifyFormComponent,
+  NetlifyFormProvider,
+  useNetlifyForm,
+} from 'react-netlify-forms';
+import * as Yup from 'yup';
+import installCast from './asciinema/cloud2sql-install.cast';
+import cloud2sqlCast from './asciinema/cloud2sql.cast';
 import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
+  const netlify = useNetlifyForm({
+    name: 'newsletter-signup',
+    honeypotName: 'bot-field',
+    onSuccess: () => {
+      // eslint-disable-next-line no-console
+      console.log('Successfully sent form data to Netlify Server');
+    },
+  });
+
+  const { handleSubmit, handleChange, handleBlur, errors, values } = useFormik({
+    initialValues: {
+      email: '',
+      referrer_url: '',
+    },
+    onSubmit: (values) => netlify.handleSubmit(null, values),
+    validationSchema: Yup.object().shape({
+      email: Yup.string()
+        .nullable()
+        .required('Please provide a valid email address')
+        .email('Please provide a valid email address'),
+    }),
+  });
+
+  useEffect(() => {
+    values.referrer_url = window.location.href;
+  }, []);
+
   return (
     <>
       <Head>
@@ -29,84 +63,302 @@ export default function Home(): JSX.Element {
         </script>
       </Head>
       <Layout>
-        <header className={styles.hero}>
-          <div className={styles.heroInner}>
-            <div className={styles.tagline}>
-              Discover Relationships Between Resources
-            </div>
-            <h1 className={styles.heroTitle}>Cloud2SQL</h1>
-            <p>Extract your infrastructure data to a SQL database.</p>
-            <p className={styles.buttons}>
-              <InstallButton product="cloud2sql" includeVersion />
-              <Link
-                to="/docs"
-                className="button button--outline button--primary button--lg"
-              >
-                View Docs
-              </Link>
+        <div className={clsx(styles._1_screen, styles['wf-section'])}>
+          <div className={styles._1_screen_content}>
+            <h1 className={styles.heading}>
+              Closing <br />
+              the Cloud Visibility Gap
+            </h1>
+            <div className={styles.gap}></div>
+            <p className={styles.paragraph}>
+              <strong>
+                Don&rsquo;t let your cloud infrastructure be a black box.
+              </strong>{' '}
+              With Cloud2SQL, you get deep insights into your resources and
+              dependencies to a destination of your choice.
             </p>
+            <div className={styles.cloud_small}>
+              cloud2sql --config aws.yaml
+            </div>
+            <div className={styles.maskot_top}></div>
             <AsciinemaPlayer
-              src={asciinemaCast}
-              cols={80}
-              rows={20}
+              src={cloud2sqlCast}
+              className={styles.big_cloud}
+              cols={75}
+              rows={18}
               preload={true}
               autoPlay={true}
               loop={true}
             />
+            <Link
+              to="/docs/installation"
+              className={clsx(styles.coolbutton, styles['w-inline-block'])}
+            >
+              <div className={styles.arrow_a}></div>
+              <div className={styles.arrow_b}></div>
+              <div className={styles['text-block']}>
+                Get started in under 5 Minutes!
+              </div>
+            </Link>
+            <div className={styles['div-block']}></div>
+            <div className={styles.bims_top}></div>
           </div>
-        </header>
-        <main className={styles.main}>
-          <div className={clsx(styles.clouds, styles.cloudsTop)} />
-          <section className={clsx(styles.section, styles.cloudSection)}>
-            <div className={styles.sectionInner}>
-              <div className={styles.sectionHeading}>
-                <div className={styles.tagline}>Query Your Infrastructure</div>
-                <h2>
-                  Infrastructure data in SQL with link tables representing
-                  resource relationships.
+        </div>
+        <div className={clsx(styles.middle_section, styles['wf-section'])}>
+          <div className={styles.selected}>
+            <div className={styles.flow_select}>
+              <img
+                src="img/homepage/purpl.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
+                srcSet="img/homepage/purpl-p-500.png 500w, img/homepage/purpl-p-800.png 800w, img/homepage/purpl.png 958w"
+                alt=""
+                className={styles['image-6']}
+              />
+              <div className={styles.select}>
+                <div className={styles['text-block-2']}>SELECT</div>
+              </div>
+              <img
+                src="img/homepage/SELECT_lines.svg"
+                loading="lazy"
+                alt=""
+                className={styles.lines}
+              />
+              <img
+                src="img/homepage/margin.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
+                srcSet="img/homepage/margin-p-500.png 500w, img/homepage/margin-p-800.png 800w, img/homepage/margin.png 864w"
+                alt=""
+                className={styles['image-7']}
+              />
+              <div className={styles.select_lines_mob}></div>
+              <img
+                src="img/homepage/cian.png"
+                loading="lazy"
+                sizes="(max-width: 479px) 320px, (max-width: 767px) 480px, (max-width: 1320px) 740px, 100vw"
+                srcSet="img/homepage/cian-p-500.png 500w, img/homepage/cian-p-800.png 800w, img/homepage/cian.png 1049w"
+                alt=""
+                className={styles['image-5']}
+              />
+              <div className={styles.flow_treeple}>
+                <div className={styles.flow}>
+                  <div className={styles['text-block-3']}>
+                    Unused EBS Volumes
+                  </div>
+                  <div className={styles['div-block-3']}>
+                    <div className={styles['text-block-4']}>
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_ec2_volume">
+                        aws_ec2_volume
+                      </Link>{' '}
+                      <br />
+                      <strong>WHERE</strong> volume_status =
+                      &apos;available&apos;;
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.flow}>
+                  <div className={styles['text-block-3']}>Large Instances</div>
+                  <div className={styles['div-block-3']}>
+                    <div className={styles['text-block-4']}>
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_ec2_instance">
+                        aws_ec2_instance
+                      </Link>{' '}
+                      <br />
+                      <strong>WHERE</strong> instance_cores &gt; 4;
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.flow}>
+                  <div className={styles['text-block-3']}>
+                    Users Without MFA
+                  </div>
+                  <div className={styles['div-block-3']}>
+                    <div className={styles['text-block-4']}>
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_iam_user">
+                        aws_iam_user
+                      </Link>{' '}
+                      <br />
+                      <strong>WHERE</strong> mfa_active = false;
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.mockups_boards}>
+            <div className={styles.mockup}></div>
+            <div className={clsx(styles.mockup, styles._2)}></div>
+            <div className={clsx(styles.mockup, styles._3)}></div>
+            <div className={clsx(styles.mockup, styles._4)}></div>
+          </div>
+          <div className={styles.centre_section}>
+            <div className={styles.centre_a}>
+              <div className={styles.bims_centre}></div>
+              <div className={styles.mascot_centre}></div>
+              <div className={styles.text_centre}>
+                <p className={styles['paragraph-2']}>
+                  <strong>
+                    Cloud2SQL is built on the{' '}
+                    <Link to="https://resoto.com">Resoto</Link> collectors.
+                  </strong>{' '}
+                  What sets Resoto apart from other cloud data collection tools
+                  is its ability to enrich the data it collects and make
+                  additional connections. This means that Resoto not only
+                  gathers raw data about your cloud resources, but also adds
+                  additional context and information that can help you better
+                  understand your cloud environment.
+                </p>
+                <h2 className={styles['heading-2']}>
+                  Make Better Decisions with Cloud2SQL
                 </h2>
               </div>
-              <ul className={styles.cards}>
-                <li>
-                  <h3>Build Your Asset Inventory</h3>
-                  <p>
-                    Visualize your infrastructure assets with your favorite
-                    tools and dashboards.
-                  </p>
-                </li>
-                <li>
-                  <h3>Improve Security Posture</h3>
-                  <p>
-                    Pipe data into your security data lake and write{' '}
-                    <abbr title="Structured Query Language">SQL</abbr> queries
-                    to find vulnerabilities.
-                  </p>
-                </li>
-                <li>
-                  <h3>Document Your Infrastructure</h3>
-                  <p>
-                    Ensure your organization is always following best practices
-                    to stay compliant.
-                  </p>
-                </li>
-              </ul>
             </div>
-          </section>
-          <div className={clsx(styles.clouds, styles.cloudsBottom)} />
-          <section className={styles.section}>
-            <div className={styles.sectionInner}>
-              <div className={styles.sectionHeading}>
-                <h2>What&rsquo;s happening in infrastructure data?</h2>
+            <div className={clsx(styles.centre_a, styles.b)}>
+              <div className={clsx(styles.text_centre, styles.b)}>
+                <h2 className={clsx(styles['heading-2'], styles.b)}>
+                  Set up Cloud2SQL in under 5 minutes
+                </h2>
+                <div className={styles._5minutas}></div>
+                <Link
+                  to="/docs/installation"
+                  className={clsx(
+                    styles.coolbutton,
+                    styles._2,
+                    styles['w-inline-block']
+                  )}
+                >
+                  <div className={clsx(styles.arrow_a, styles._2)}></div>
+                  <div className={clsx(styles['text-block'], styles._2)}>
+                    Get started
+                  </div>
+                  <div className={clsx(styles.arrow_b, styles._2)}></div>
+                </Link>
+                <div className={styles.button_back}></div>
               </div>
-              <p>
-                Keep up with the latest{' '}
-                <Link to="https://some.engineering">Some Engineering</Link>{' '}
-                news&mdash;get product updates, blog posts, and more!
-              </p>
-              <NewsletterSignupForm />
+              <div className={styles.cloud_small_b}>
+                pip3 install --user cloud2sql[all]
+              </div>
+              <AsciinemaPlayer
+                src={installCast}
+                className={clsx(styles.big_cloud, styles.centre)}
+                cols={75}
+                rows={18}
+                preload={true}
+                autoPlay={true}
+                loop={true}
+              />
             </div>
-          </section>
-        </main>
+          </div>
+        </div>
+        <div className={clsx(styles.contuctusfooter, styles['wf-section'])}>
+          <div className={styles.contact_div}>
+            <div className={styles.bg_contuct}></div>
+            <img
+              src="img/homepage/cian.png"
+              loading="lazy"
+              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 1320px) 640px, (max-width: 1049px) 100vw, 1049px"
+              srcSet="img/homepage/cian-p-500.png 500w, img/homepage/cian-p-800.png 800w, img/homepage/cian.png 1049w"
+              alt=""
+              className={styles['image-3']}
+            />
+            <img
+              src="img/homepage/margin.png"
+              loading="lazy"
+              sizes="(max-width: 479px) 290px, (max-width: 767px) 400px, (max-width: 1320px) 640px, 864px"
+              srcSet="img/homepage/margin-p-500.png 500w, img/homepage/margin-p-800.png 800w, img/homepage/margin.png 864w"
+              alt=""
+              className={styles['image-2']}
+            />
+            <div className={styles.bims_footer}></div>
+            <div className={styles.mascot_footer}></div>
+            <div className={styles.contact_left}>
+              <h1 className={styles['heading-3']}>Resoto Newsletter</h1>
+              <div className={styles['w-form']}>
+                <NetlifyFormProvider {...netlify}>
+                  <NetlifyFormComponent
+                    onSubmit={handleSubmit}
+                    className={styles.form}
+                  >
+                    <Honeypot />
+                    {netlify.success ? (
+                      <div className={styles['w-form-done']}>
+                        <div>
+                          Thank you for signing up! Please check your inbox to
+                          confirm your subscription.
+                        </div>
+                      </div>
+                    ) : netlify.error ? (
+                      <div className={styles['w-form-fail']}>
+                        <div>Oops! Something went wrong.</div>
+                      </div>
+                    ) : (
+                      <>
+                        <div>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.email}
+                            placeholder="Email address"
+                            className={clsx(
+                              styles['text-field'],
+                              styles['w-input']
+                            )}
+                            style={
+                              errors.email
+                                ? {
+                                    borderColor: 'var(--ifm-color-danger)',
+                                    borderWidth: '2px',
+                                  }
+                                : null
+                            }
+                          />
+                          <button
+                            type="submit"
+                            className={clsx(
+                              styles.coolbutton,
+                              styles.contucts,
+                              styles['w-inline-block']
+                            )}
+                            disabled={netlify.submitting || errors.email}
+                          >
+                            <span
+                              className={clsx(styles.arrow_a, styles._3)}
+                            ></span>
+                            <span
+                              className={clsx(styles.arrow_b, styles._3)}
+                            ></span>
+                            <span
+                              className={clsx(styles['text-block'], styles._3)}
+                            >
+                              Subscribe
+                            </span>
+                          </button>
+                          <div className={styles['div-block-4']}></div>
+                        </div>
+                        <input
+                          type="hidden"
+                          name="referrer_url"
+                          id="referrer_url"
+                          value={values.referrer_url}
+                        />
+                      </>
+                    )}
+                  </NetlifyFormComponent>
+                </NetlifyFormProvider>
+              </div>
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
   );

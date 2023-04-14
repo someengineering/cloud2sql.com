@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 
 type AsciinemaPlayerProps = {
   src: string;
+  className?: string;
   cols?: string;
   rows?: string;
   autoPlay?: boolean;
@@ -18,10 +19,11 @@ type AsciinemaPlayerProps = {
   fontSize?: string;
 };
 
-const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
+export default function AsciinemaPlayer({
   src,
+  className,
   ...asciinemaOptions
-}) => {
+}: AsciinemaPlayerProps): JSX.Element {
   return (
     <BrowserOnly>
       {() => {
@@ -41,7 +43,7 @@ const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
         return (
           <div
             ref={ref}
-            className={`video-container shadow--tl ${
+            className={`video-container shadow--tl ${className ?? ''} ${
               asciinemaOptions.autoPlay && asciinemaOptions.loop
                 ? 'noControls'
                 : ''
@@ -51,6 +53,4 @@ const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
       }}
     </BrowserOnly>
   );
-};
-
-export default AsciinemaPlayer;
+}
