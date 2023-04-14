@@ -9,9 +9,9 @@ sidebar_label: "1. Installation"
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 ```
 
-Cloud2SQL can be installed using Homebrew or Python pip.
+Cloud2SQL can be installed using Homebrew on macOS or Python pip on Linux, Windows, and macOS.
 
-## Homebrew
+## Homebrew (macOS)
 
 ```bash
 brew install someengineering/tap/cloud2sql
@@ -23,7 +23,7 @@ The installation process will take a couple of minutes.
 
 :::
 
-## Python pip
+## Python pip (Linux, Windows, macOS)
 
 **Python 3.9+ and [pip](https://pip.pypa.io/) are required.** If your system has Python 3.9+ but not pip, you can install pip using the command `python3 -m ensurepip`.
 
