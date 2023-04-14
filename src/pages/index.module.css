@@ -2113,14 +2113,18 @@ textarea.w-select {
 }
 
 .text-block-4 {
-  width: 280px;
-  font-size: 18px;
+  width: 300px;
+  font-size: 16px;
   font-family: var(--ifm-font-family-monospace);
   color: #ffffff;
 }
 
 .text-block-4 strong {
   color: #ffffff;
+}
+
+.text-block-4 a {
+  color: #89d1f1;
 }
 
 .text-span {
@@ -2680,7 +2684,7 @@ textarea.w-select {
   }
 
   .text-block-4 {
-    width: 380px;
+    width: 400px;
     font-size: 21px;
     line-height: 28px;
   }
@@ -3236,8 +3240,8 @@ textarea.w-select {
   }
 
   .text-block-4 {
-    width: 260px;
-    font-size: 18px;
+    width: 280px;
+    font-size: 14px;
   }
 
   .selected {

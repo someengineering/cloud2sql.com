@@ -19,11 +19,11 @@ type AsciinemaPlayerProps = {
   fontSize?: string;
 };
 
-const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
+export default function AsciinemaPlayer({
   src,
   className,
   ...asciinemaOptions
-}) => {
+}: AsciinemaPlayerProps): JSX.Element {
   return (
     <BrowserOnly>
       {() => {
@@ -53,6 +53,4 @@ const AsciinemaPlayer: React.FC<AsciinemaPlayerProps> = ({
       }}
     </BrowserOnly>
   );
-};
-
-export default AsciinemaPlayer;
+}

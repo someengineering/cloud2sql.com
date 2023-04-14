@@ -147,7 +147,11 @@ export default function Home(): JSX.Element {
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <strong className={styles['text-span']}>SELECT</strong> *{' '}
-                      <strong>FROM</strong> aws_ec2_volume{' '}
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_ec2_volume">
+                        aws_ec2_volume
+                      </Link>{' '}
+                      <br />
                       <strong>WHERE</strong> volume_status =
                       &apos;available&apos;;
                     </div>
@@ -158,7 +162,11 @@ export default function Home(): JSX.Element {
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <strong className={styles['text-span']}>SELECT</strong> *{' '}
-                      <strong>FROM</strong> aws_ec2_instance{' '}
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_ec2_instance">
+                        aws_ec2_instance
+                      </Link>{' '}
+                      <br />
                       <strong>WHERE</strong> instance_cores &gt; 4;
                     </div>
                   </div>
@@ -170,8 +178,12 @@ export default function Home(): JSX.Element {
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <strong className={styles['text-span']}>SELECT</strong> *{' '}
-                      <strong>FROM</strong> aws_iam_user <strong>WHERE</strong>{' '}
-                      mfa_active = false;
+                      <strong>FROM</strong>{' '}
+                      <Link to="https://resoto.com/docs/reference/data-models/aws#aws_iam_user">
+                        aws_iam_user
+                      </Link>{' '}
+                      <br />
+                      <strong>WHERE</strong> mfa_active = false;
                     </div>
                   </div>
                 </div>
