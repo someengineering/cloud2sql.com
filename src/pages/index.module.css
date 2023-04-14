@@ -2479,8 +2479,15 @@ textarea.w-select {
   background-color: #ffffff;
 }
 
-.text-span-2 {
+.paragraph strong,
+.paragraph-2 strong {
   font-weight: 700;
+  color: #ffffff;
+}
+
+.paragraph a,
+.paragraph-2 a {
+  color: #89d1f1;
 }
 
 .select_lines_mob {

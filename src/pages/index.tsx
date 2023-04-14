@@ -71,9 +71,11 @@ export default function Home(): JSX.Element {
             </h1>
             <div className={styles.gap}></div>
             <p className={styles.paragraph}>
-              Don&#x27;t let your cloud infrastructure be a black box. With
-              Cloud2SQL, you get deep insights into your resources and
-              dependencies, to a destination of your choice.
+              <strong>
+                Don&rsquo;t let your cloud infrastructure be a black box.
+              </strong>{' '}
+              With Cloud2SQL, you get deep insights into your resources and
+              dependencies to a destination of your choice.
             </p>
             <div className={styles.cloud_small}>
               cloud2sql --config aws.yaml
@@ -202,15 +204,16 @@ export default function Home(): JSX.Element {
               <div className={styles.mascot_centre}></div>
               <div className={styles.text_centre}>
                 <p className={styles['paragraph-2']}>
-                  <span className={styles['text-span-2']}>
-                    Cloud2SQL is built on top of the Resoto collectors.
-                  </span>{' '}
+                  <strong>
+                    Cloud2SQL is built on the{' '}
+                    <Link to="https://resoto.com">Resoto</Link> collectors.
+                  </strong>{' '}
                   What sets Resoto apart from other cloud data collection tools
                   is its ability to enrich the data it collects and make
                   additional connections. This means that Resoto not only
                   gathers raw data about your cloud resources, but also adds
                   additional context and information that can help you better
-                  understand your cloud environment
+                  understand your cloud environment.
                 </p>
                 <h2 className={styles['heading-2']}>
                   Make Better Decisions with Cloud2SQL
