@@ -147,7 +147,8 @@ export default function Home(): JSX.Element {
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <span className={styles['text-span']}>SELECT</span> * FROM
-                      aws_ec2_volume WHERE …
+                      aws_ec2_volume WHERE volume_status =
+                      &apos;available&apos;;
                     </div>
                   </div>
                 </div>
@@ -156,18 +157,18 @@ export default function Home(): JSX.Element {
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <span className={styles['text-span']}>SELECT</span> * FROM
-                      aws_ec2_instance WHERE …
+                      aws_ec2_instance WHERE instance_cores &gt; 4;
                     </div>
                   </div>
                 </div>
                 <div className={styles.flow}>
                   <div className={styles['text-block-3']}>
-                    Unused EBS Volumes
+                    Users without MFA
                   </div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
                       <span className={styles['text-span']}>SELECT</span> * FROM
-                      ...
+                      aws_iam_user WHERE mfa_active = false;
                     </div>
                   </div>
                 </div>
