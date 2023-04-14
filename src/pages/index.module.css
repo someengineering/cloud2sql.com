@@ -2114,13 +2114,17 @@ textarea.w-select {
 
 .text-block-4 {
   width: 280px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: var(--ifm-font-family-monospace);
   color: #ffffff;
 }
 
+.text-block-4 strong {
+  color: #ffffff;
+}
+
 .text-span {
-  color: #e98df7;
+  color: #e98df7 !important;
 }
 
 .section {
@@ -2677,8 +2681,8 @@ textarea.w-select {
 
   .text-block-4 {
     width: 380px;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 21px;
+    line-height: 28px;
   }
 
   .selected {

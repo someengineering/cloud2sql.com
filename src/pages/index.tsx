@@ -146,8 +146,9 @@ export default function Home(): JSX.Element {
                   </div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
-                      <span className={styles['text-span']}>SELECT</span> * FROM
-                      aws_ec2_volume WHERE volume_status =
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong> aws_ec2_volume{' '}
+                      <strong>WHERE</strong> volume_status =
                       &apos;available&apos;;
                     </div>
                   </div>
@@ -156,19 +157,21 @@ export default function Home(): JSX.Element {
                   <div className={styles['text-block-3']}>Large Instances</div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
-                      <span className={styles['text-span']}>SELECT</span> * FROM
-                      aws_ec2_instance WHERE instance_cores &gt; 4;
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong> aws_ec2_instance{' '}
+                      <strong>WHERE</strong> instance_cores &gt; 4;
                     </div>
                   </div>
                 </div>
                 <div className={styles.flow}>
                   <div className={styles['text-block-3']}>
-                    Users without MFA
+                    Users Without MFA
                   </div>
                   <div className={styles['div-block-3']}>
                     <div className={styles['text-block-4']}>
-                      <span className={styles['text-span']}>SELECT</span> * FROM
-                      aws_iam_user WHERE mfa_active = false;
+                      <strong className={styles['text-span']}>SELECT</strong> *{' '}
+                      <strong>FROM</strong> aws_iam_user <strong>WHERE</strong>{' '}
+                      mfa_active = false;
                     </div>
                   </div>
                 </div>
