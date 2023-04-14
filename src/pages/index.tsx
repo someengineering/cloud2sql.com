@@ -94,10 +94,9 @@ export default function Home(): JSX.Element {
               to="/docs/installation"
               className={clsx(styles.coolbutton, styles['w-inline-block'])}
             >
-              <div className={styles.arrow_a}></div>
               <div className={styles.arrow_b}></div>
               <div className={styles['text-block']}>
-                Get started in under 5 Minutes!
+                Get Started in Under 5 Minutes
               </div>
             </Link>
             <div className={styles['div-block']}></div>
@@ -234,16 +233,15 @@ export default function Home(): JSX.Element {
                     styles['w-inline-block']
                   )}
                 >
-                  <div className={clsx(styles.arrow_a, styles._2)}></div>
-                  <div className={clsx(styles['text-block'], styles._2)}>
-                    Get started
-                  </div>
                   <div className={clsx(styles.arrow_b, styles._2)}></div>
+                  <div className={clsx(styles['text-block'], styles._2)}>
+                    Get Started
+                  </div>
                 </Link>
                 <div className={styles.button_back}></div>
               </div>
               <div className={styles.cloud_small_b}>
-                pip3 install --user cloud2sql[all]
+                pip3 install --user &apos;cloud2sql[all]&apos;
               </div>
               <AsciinemaPlayer
                 src={installCast}
@@ -331,9 +329,6 @@ export default function Home(): JSX.Element {
                             )}
                             disabled={netlify.submitting || errors.email}
                           >
-                            <span
-                              className={clsx(styles.arrow_a, styles._3)}
-                            ></span>
                             <span
                               className={clsx(styles.arrow_b, styles._3)}
                             ></span>
