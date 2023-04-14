@@ -1786,10 +1786,13 @@ textarea.w-select {
 
 .coolbutton {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 40;
   width: 498px;
   height: 72px;
-  margin-top: 32px;
+  margin-top: 42px;
   border-radius: 36px;
   background-color: #762dd7;
   color: #fff !important;
@@ -1816,33 +1819,7 @@ textarea.w-select {
   width: 604px;
 }
 
-.arrow_a {
-  position: absolute;
-  left: 64px;
-  top: 18px;
-  right: auto;
-  bottom: auto;
-  width: 36px;
-  height: 36px;
-  background-image: url('/img/homepage/Arrow_A.svg');
-  background-position: 50% 50%;
-  background-size: auto;
-}
-
-.arrow_a._2 {
-  left: 55px;
-}
-
-.arrow_a._3 {
-  left: 220px;
-}
-
 .arrow_b {
-  position: absolute;
-  left: 64px;
-  top: 18px;
-  right: auto;
-  bottom: auto;
   width: 36px;
   height: 36px;
   background-image: url('/img/homepage/Arrow_B.svg');
@@ -1850,12 +1827,8 @@ textarea.w-select {
   background-size: auto;
 }
 
-.arrow_b._2 {
-  left: 55px;
-}
-
-.arrow_b._3 {
-  left: 220px;
+.coolbutton:hover .arrow_b {
+  background-image: url('/img/homepage/Arrow_A.svg');
 }
 
 .gap {
@@ -1873,20 +1846,11 @@ textarea.w-select {
 }
 
 .text-block {
-  margin-top: 24px;
-  margin-left: 116px;
   font-size: 20px;
   line-height: 24px;
+  margin-left: 0.75em;
   font-weight: 600;
   text-transform: uppercase;
-}
-
-.text-block._2 {
-  margin-left: 107px;
-}
-
-.text-block._3 {
-  margin-left: 50px;
 }
 
 .div-block {
@@ -2272,7 +2236,7 @@ textarea.w-select {
   right: -46px;
   bottom: auto;
   z-index: 50;
-  width: 305px;
+  width: 335px;
   height: 70px;
   background-color: rgb(18, 19, 20);
   text-align: center;
@@ -2400,19 +2364,6 @@ textarea.w-select {
 .form {
   position: relative;
   margin-bottom: 195px;
-}
-
-.submit-button {
-  position: absolute;
-  left: 0%;
-  top: auto;
-  right: auto;
-  bottom: 0%;
-  z-index: 50;
-  display: none;
-  width: 100%;
-  height: 72px;
-  opacity: 0;
 }
 
 .mascot_footer {
@@ -2576,24 +2527,6 @@ textarea.w-select {
     width: 677px;
   }
 
-  .arrow_a {
-    left: 194px;
-    top: 24px;
-  }
-
-  .arrow_a._2 {
-    left: 74px;
-  }
-
-  .arrow_b {
-    left: 194px;
-    top: 24px;
-  }
-
-  .arrow_b._2 {
-    left: 74px;
-  }
-
   .gap {
     left: 546px;
     top: 291px;
@@ -2601,15 +2534,6 @@ textarea.w-select {
     height: 78px;
     background-size: 100%;
     background-repeat: no-repeat;
-  }
-
-  .text-block {
-    margin-top: 29px;
-    margin-left: 246px;
-  }
-
-  .text-block._2 {
-    margin-left: 120px;
   }
 
   .div-block {
@@ -2783,7 +2707,7 @@ textarea.w-select {
 
   .cloud_small_b {
     right: -60px;
-    width: 456px;
+    width: 526px;
     height: 92px;
     line-height: 92px;
     font-size: 22px;
@@ -2834,11 +2758,6 @@ textarea.w-select {
 
   .form {
     width: 677px;
-  }
-
-  .submit-button {
-    display: none;
-    height: 84px;
   }
 
   .mascot_footer {
@@ -3137,49 +3056,12 @@ textarea.w-select {
     width: 400px;
   }
 
-  .arrow_a {
-    display: none;
-  }
-
-  .arrow_a._2 {
-    display: none;
-  }
-
-  .arrow_a._3 {
-    display: none;
-  }
-
-  .arrow_b {
-    display: none;
-  }
-
-  .arrow_b._2 {
-    left: 200px;
-    display: block;
-  }
-
-  .arrow_b._3 {
-    display: block;
-  }
-
   .gap {
     left: 304px;
     top: 140px;
     height: 38px;
     background-size: auto 100%;
     background-repeat: no-repeat;
-  }
-
-  .text-block {
-    margin-left: 30px;
-  }
-
-  .text-block._2 {
-    margin-left: 50px;
-  }
-
-  .text-block._3 {
-    margin-left: 120px;
   }
 
   .div-block {
@@ -3445,7 +3327,6 @@ textarea.w-select {
   }
 
   .coolbutton._2 {
-    display: block;
     width: 240px;
   }
 
@@ -3454,17 +3335,7 @@ textarea.w-select {
     margin-top: 20px;
   }
 
-  .arrow_b._2 {
-    left: 170px;
-    top: 15px;
-    width: 24px;
-    height: 24px;
-    background-size: 100%;
-  }
-
-  .arrow_b._3 {
-    left: 170px;
-    top: 15px;
+  .arrow_b {
     width: 24px;
     height: 24px;
     background-size: 100%;
@@ -3477,23 +3348,7 @@ textarea.w-select {
   }
 
   .text-block {
-    width: 300px;
-    margin-top: 14px;
-    margin-left: 0px;
     font-size: 16px;
-    text-align: center;
-  }
-
-  .text-block._2 {
-    margin-top: 0px;
-    padding-top: 14px;
-    text-align: left;
-  }
-
-  .text-block._3 {
-    width: auto;
-    margin-left: 90px;
-    text-align: left;
   }
 
   .div-block {
@@ -3583,7 +3438,7 @@ textarea.w-select {
 
   .text-block-4 {
     width: 206px;
-    font-size: 16px;
+    font-size: 11px;
     line-height: 22px;
   }
 

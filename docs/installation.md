@@ -7,11 +7,13 @@ sidebar_label: "1. Installation"
 
 ```mdx-code-block
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
+import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 ```
 
 Cloud2SQL can be installed using Homebrew on macOS or Python pip on Linux, Windows, and macOS.
 
-## Homebrew (macOS)
+## Homebrew (macOS) {#homebrew}
 
 ```bash
 brew install someengineering/tap/cloud2sql
@@ -23,21 +25,27 @@ The installation process will take a couple of minutes.
 
 :::
 
-## Python pip (Linux, Windows, macOS)
+## Python pip (Linux, Windows, macOS) {#pip}
 
-**Python 3.9+ and [pip](https://pip.pypa.io/) are required.** If your system has Python 3.9+ but not pip, you can install pip using the command `python3 -m ensurepip`.
+<Tabs>
+<TabItem value="user" label="User">
 
-Install the `cloud2sql[all]` package:
-
-### User Installation
+The below command will install the `cloud2sql` command to `~/.local/bin/` on Linux, `~/Library/Python/3.<version>/bin/` on macOS, or `%APPDATA%\Python\bin\` on Windows. (Make sure those directories are part of your `PATH` environment variable.)
 
 ```bash
 $ pip3 install --user 'cloud2sql[all]'
 ```
 
-This will install the `cloud2sql` command to `~/.local/bin/` on Linux, `~/Library/Python/3.<version>/bin/` on macOS or `%APPDATA%\Python\bin\` on Windows. Make sure those directories are part of your `PATH` environment variable. If you are unsure where pip installs user packages, you can run `python3 -m site --user-base` to find out. The binaries will be in the `bin` subdirectory of the path returned by the command.
+:::tip
 
-### Alternative: Virtual Env Installation
+If you are unsure where pip installs user packages, you can run `python3 -m site --user-base` to find out. The binaries will be in the `bin` subdirectory of the path returned by the command.
+
+:::
+
+</TabItem>
+<TabItem value="windows" label="Virtual Environment">
+
+The following set of commands will install the `cloud2sql` command to the `cloud2sql-venv` virtual environment, which can be activated using `source cloud2sql-venv/bin/activate`.
 
 ```bash
 $ python3 -m venv cloud2sql-venv
@@ -45,9 +53,16 @@ $ source cloud2sql-venv/bin/activate
 $ pip3 install 'cloud2sql[all]'
 ```
 
-This will install the `cloud2sql` command to the `cloud2sql-venv` virtual environment, which can be activated using the `source cloud2sql-venv/bin/activate` command.
+</TabItem>
+</Tabs>
 
 :::note
+
+**Python 3.9+ and [pip](https://pip.pypa.io/) are required.** If your system has Python 3.9+ but not pip, you can install pip using the command `python3 -m ensurepip`.
+
+:::
+
+:::info
 
 If you only require support for a specific database, you can choose between `cloud2sql[snowflake]`, `cloud2sql[parquet]`, `cloud2sql[postgresql]`, and `cloud2sql[mysql]` instead of installing `cloud2sql[all]`.
 
