@@ -55,8 +55,11 @@ export default function Home(): JSX.Element {
             url: 'https://cloud2sql.com',
             potentialAction: {
               '@type': 'SearchAction',
-              target:
-                'https://cloud2sql.com/search?searchtext={search_term_string}',
+              target: {
+                '@type': 'EntryPoint',
+                urlTemplate:
+                  'https://cloud2sql.com/search?q={search_term_string}',
+              },
               'query-input': 'required name=search_term_string',
             },
           })}
@@ -74,8 +77,8 @@ export default function Home(): JSX.Element {
               <strong>
                 Don&rsquo;t let your cloud infrastructure be a black box.
               </strong>{' '}
-              With Cloud2SQL, you get deep insights into your resources and
-              dependencies to a destination of your choice.
+              With Cloud2SQL, you get insights into resources and dependencies
+              to a destination of your choice.
             </p>
             <div className={styles.cloud_small}>
               cloud2sql --config aws.yaml
