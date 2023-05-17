@@ -92,6 +92,7 @@ export default function Home(): JSX.Element {
               preload={true}
               autoPlay={true}
               loop={true}
+              controls={false}
             />
             <Link
               to="/docs/installation"
@@ -254,6 +255,7 @@ export default function Home(): JSX.Element {
                 preload={true}
                 autoPlay={true}
                 loop={true}
+                controls={false}
               />
             </div>
           </div>

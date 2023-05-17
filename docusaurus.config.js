@@ -2,7 +2,6 @@
 // @ts-check
 
 const a11yEmoji = require('@fec/remark-a11y-emoji');
-const oembed = require('remark-plugin-oembed');
 
 const latestRelease = require('./latestRelease.json');
 
@@ -21,6 +20,7 @@ const config = {
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
+  noIndex: !isProd,
   stylesheets: [
     {
       rel: 'preload',
@@ -109,7 +109,7 @@ const config = {
           editUrl: 'https://github.com/someengineering/cloud2sql.com/edit/main',
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
-          remarkPlugins: [a11yEmoji, oembed],
+          remarkPlugins: [a11yEmoji],
         },
         blog: false,
         theme: {
