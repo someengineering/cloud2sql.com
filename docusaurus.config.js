@@ -198,8 +198,10 @@ const config = {
           content:
             'Extract your infrastructure data to a SQL database. Open source and free to use.',
         },
-        { property: 'og:type', content: 'website' },
-        { name: 'robots', content: 'nofollow' },
+        {
+          property: 'og:type',
+          content: 'website',
+        },
       ],
       tableOfContents: {
         minHeadingLevel: 2,
@@ -237,8 +239,13 @@ const config = {
             ],
           },
           {
+            label: 'Releases',
+            href: 'https://github.com/someengineering/cloud2sql/releases',
+            position: 'right',
+          },
+          {
             label: 'Blog',
-            href: 'https://some.engineering/blog',
+            href: 'https://resoto.com/blog',
             position: 'right',
           },
           {
@@ -313,12 +320,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                href: 'https://some.engineering/blog',
-              },
-              {
                 label: 'Releases',
                 href: 'https://github.com/someengineering/cloud2sql/releases',
+              },
+              {
+                label: 'Blog',
+                href: 'https://resoto.com/blog',
+              },
+              {
+                label: 'Podcast',
+                href: 'https://resoto.com/podcast',
               },
             ],
           },
