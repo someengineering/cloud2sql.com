@@ -22,69 +22,15 @@ const config = {
   trailingSlash: false,
   noIndex: !isProd,
   stylesheets: [
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow100.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow200.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow300.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow400.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow500.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow600.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow700.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow800.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
-    {
-      rel: 'preload',
-      href: 'https://cdn.some.engineering/fonts/Barlow900.woff2',
-      as: 'font',
-      type: 'font/woff2',
-      crossorigin: true,
-    },
+    ...Array(9)
+      .fill()
+      .map((_, i) => ({
+        rel: 'preload',
+        href: `https://cdn.some.engineering/fonts/Barlow${i + 1}00.woff2`,
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: true,
+      })),
   ],
   scripts: isProd
     ? [
