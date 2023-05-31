@@ -87,26 +87,10 @@ const config = {
         swRegister: false,
         swCustom: require.resolve('./src/sw.js'),
         pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: 'site.webmanifest',
-          },
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: 'img/icon-192.maskable.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: 'img/icon-512.maskable.png',
-          },
-          {
-            tagName: 'meta',
-            name: 'theme-color',
-            content: '#89d1f1',
-          },
+          { tagName: 'link', rel: 'manifest', href: 'site.webmanifest' },
+          { tagName: 'link', rel: 'icon', href: 'img/icon-192.maskable.png' },
+          { tagName: 'link', rel: 'icon', href: 'img/icon-512.maskable.png' },
+          { tagName: 'meta', name: 'theme-color', content: '#89d1f1' },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-capable',
@@ -144,10 +128,7 @@ const config = {
           content:
             'Extract your infrastructure data to a SQL database. Open source and free to use.',
         },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
+        { property: 'og:type', content: 'website' },
       ],
       tableOfContents: {
         minHeadingLevel: 2,
@@ -160,43 +141,27 @@ const config = {
       navbar: {
         hideOnScroll: true,
         title: 'Cloud2SQL',
-        logo: {
-          alt: '',
-          src: 'img/navbar-logo.svg',
-        },
+        logo: { alt: '', src: 'img/navbar-logo.svg' },
         items: [
           {
             label: 'Docs',
             to: '/docs',
             position: 'right',
             items: [
-              {
-                label: 'Installation',
-                to: '/docs/installation',
-              },
-              {
-                label: 'Configuration',
-                to: '/docs/configuration',
-              },
-              {
-                label: 'Resource Collection',
-                to: '/docs/resource-collection',
-              },
+              { label: 'Installation', to: '/docs/installation' },
+              { label: 'Configuration', to: '/docs/configuration' },
+              { label: 'Resource Collection', to: '/docs/resource-collection' },
             ],
           },
+          { label: 'Blog', href: 'https://resoto.com/blog', position: 'right' },
           {
-            label: 'Releases',
-            href: 'https://github.com/someengineering/cloud2sql/releases',
-            position: 'right',
-          },
-          {
-            label: 'Blog',
-            href: 'https://resoto.com/blog',
+            label: 'Podcast',
+            href: 'https://resoto.com/podcast',
             position: 'right',
           },
           {
             label: 'GitHub',
-            href: 'https://github.com/someengineering/cloud2sql',
+            href: 'https://github.com/someengineering/resoto',
             position: 'left',
             className: 'navbar-icon-link navbar-github-link',
             'aria-label': 'GitHub',
@@ -215,6 +180,13 @@ const config = {
             className: 'navbar-icon-link navbar-linkedin-link',
             'aria-label': 'LinkedIn',
           },
+          {
+            label: 'YouTube',
+            href: 'https://youtube.com/@someengineering',
+            position: 'left',
+            className: 'navbar-icon-link navbar-youtube-link',
+            'aria-label': 'YouTube',
+          },
         ],
       },
       footer: {
@@ -223,43 +195,10 @@ const config = {
           {
             title: 'Documentation',
             items: [
-              {
-                label: 'Overview',
-                to: '/docs',
-              },
-              {
-                label: 'Installation',
-                to: '/docs/installation',
-              },
-              {
-                label: 'Configuration',
-                to: '/docs/configuration',
-              },
-              {
-                label: 'Resource Collection',
-                to: '/docs/resource-collection',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Code of Conduct',
-                to: '/code-of-conduct',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/someengineering',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/someengineering',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://linkedin.com/company/someengineering',
-              },
+              { label: 'Overview', to: '/docs' },
+              { label: 'Installation', to: '/docs/installation' },
+              { label: 'Configuration', to: '/docs/configuration' },
+              { label: 'Resource Collection', to: '/docs/resource-collection' },
             ],
           },
           {
@@ -269,27 +208,30 @@ const config = {
                 label: 'Releases',
                 href: 'https://github.com/someengineering/cloud2sql/releases',
               },
+              { label: 'Blog', href: 'https://resoto.com/blog' },
+              { label: 'Podcast', href: 'https://resoto.com/podcast' },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              { label: 'GitHub', href: 'https://github.com/someengineering' },
+              { label: 'Discord', href: 'https://discord.gg/someengineering' },
               {
-                label: 'Blog',
-                href: 'https://resoto.com/blog',
+                label: 'LinkedIn',
+                href: 'https://linkedin.com/company/someengineering',
               },
               {
-                label: 'Podcast',
-                href: 'https://resoto.com/podcast',
+                label: 'YouTube',
+                href: 'https://youtube.com/@someengineering',
               },
             ],
           },
           {
             title: 'Legal',
             items: [
-              {
-                label: 'Privacy Policy',
-                to: '/privacy',
-              },
-              {
-                label: 'Terms and Conditions',
-                to: '/terms',
-              },
+              { label: 'Privacy Policy', to: '/privacy' },
+              { label: 'Terms and Conditions', to: '/terms' },
             ],
           },
         ],
@@ -302,8 +244,8 @@ const config = {
         contextualSearch: true,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/github'),
-        darkTheme: require('./src/utils/prismDark.js'),
+        theme: require('prism-react-renderer').themes.github,
+        darkTheme: require('prism-react-renderer').themes.dracula,
       },
       magicComments: [
         {

@@ -3,6 +3,10 @@
   "singleQuote": true,
   "overrides": [
     {
+      "files": [".imgbotconfig", ".eslintrc", ".prettierrc"],
+      "options": { "parser": "json" }
+    },
+    {
       "files": ["*.md", "*.mdx"],
       "options": {
         "embeddedLanguageFormatting": "off",
