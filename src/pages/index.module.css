@@ -271,6 +271,7 @@ fieldset[disabled]:not(.w-input-disabled) .w-select {
 textarea.w-input,
 textarea.w-select {
   height: auto;
+  font-family: var(--ifm-font-family-base);
 }
 .w-select {
   background-color: #f3f3f3;

@@ -18,31 +18,41 @@ import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
   const netlify = useNetlifyForm({
-    name: 'newsletter-signup',
+    name: 'contact',
     honeypotName: 'bot-field',
     onSuccess: () => {
       // eslint-disable-next-line no-console
-      console.log('Successfully sent form data to Netlify Server');
+      console.log('Successfully sent form data to Netlify');
     },
   });
 
-  const { handleSubmit, handleChange, handleBlur, errors, values } = useFormik({
-    initialValues: {
-      email: '',
-      referrer_url: '',
-    },
-    onSubmit: (values) => netlify.handleSubmit(null, values),
-    validationSchema: Yup.object().shape({
-      email: Yup.string()
-        .nullable()
-        .required('Please provide a valid email address')
-        .email('Please provide a valid email address'),
-    }),
-  });
+  const { handleSubmit, handleChange, handleBlur, touched, errors, values } =
+    useFormik({
+      initialValues: {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        referrer: '',
+      },
+      onSubmit: (values) => netlify.handleSubmit(null, values),
+      validationSchema: Yup.object().shape({
+        name: Yup.string().nullable().required('Please tell us your name'),
+        email: Yup.string()
+          .nullable()
+          .required('Please enter a valid email address')
+          .email('Please enter a valid email address'),
+        message: Yup.string().nullable().required('Please enter a message'),
+      }),
+    });
 
   useEffect(() => {
-    values.referrer_url = window.location.href;
+    values.referrer = window.location.href;
   }, []);
+
+  useEffect(() => {
+    values.subject = `[Cloud2SQL] Inquiry from ${values.name}`;
+  }, [values.name]);
 
   return (
     <>
@@ -282,10 +292,7 @@ export default function Home(): JSX.Element {
             <div className={styles.bims_footer}></div>
             <div className={styles.mascot_footer}></div>
             <div className={styles.contact_left}>
-              <h1 className={styles['heading-3']}>
-                Resoto <br />
-                Newsletter
-              </h1>
+              <h1 className={styles['heading-3']}>Contact Us</h1>
               <div className={styles['w-form']}>
                 <NetlifyFormProvider {...netlify}>
                   <NetlifyFormComponent
@@ -296,37 +303,98 @@ export default function Home(): JSX.Element {
                     {netlify.success ? (
                       <div className={styles['w-form-done']}>
                         <div>
-                          Thank you for signing up! Please check your inbox to
-                          confirm your subscription.
+                          Thank you for your message. We&rsquo;ll be in touch
+                          soon!
                         </div>
                       </div>
                     ) : netlify.error ? (
                       <div className={styles['w-form-fail']}>
-                        <div>Oops! Something went wrong.</div>
+                        <div>Sorry, something went wrong.</div>
                       </div>
                     ) : (
                       <>
                         <div>
                           <input
-                            type="email"
-                            name="email"
-                            id="email"
+                            aria-label="Name"
+                            placeholder="Your name"
+                            type="text"
+                            name="name"
+                            id="name"
+                            autoComplete="name"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.email}
-                            placeholder="Email address"
+                            value={values.name}
                             className={clsx(
                               styles['text-field'],
                               styles['w-input']
                             )}
                             style={
-                              errors.email
+                              touched.name && errors.name
                                 ? {
                                     borderColor: 'var(--ifm-color-danger)',
                                     borderWidth: '2px',
                                   }
                                 : null
                             }
+                          />
+                          <input
+                            aria-label="Email address"
+                            placeholder="Your email address"
+                            type="email"
+                            name="email"
+                            id="email"
+                            autoComplete="email"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.email}
+                            className={clsx(
+                              styles['text-field'],
+                              styles['w-input']
+                            )}
+                            style={
+                              touched.email && errors.email
+                                ? {
+                                    borderColor: 'var(--ifm-color-danger)',
+                                    borderWidth: '2px',
+                                  }
+                                : null
+                            }
+                          />
+                          <input
+                            type="hidden"
+                            name="subject"
+                            id="subject"
+                            value={values.subject}
+                          />
+                          <textarea
+                            aria-label="Message"
+                            placeholder="Your message"
+                            id="message"
+                            name="message"
+                            autoComplete="on"
+                            autoCorrect="on"
+                            rows={5}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.message}
+                            className={clsx(
+                              styles['text-field'],
+                              styles['w-input']
+                            )}
+                            style={
+                              touched.message && errors.message
+                                ? {
+                                    borderColor: 'var(--ifm-color-danger)',
+                                    borderWidth: '2px',
+                                  }
+                                : null
+                            }
+                          />
+                          <input
+                            type="hidden"
+                            name="referrer"
+                            id="referrer"
+                            value={values.referrer}
                           />
                           <button
                             type="submit"
@@ -335,7 +403,12 @@ export default function Home(): JSX.Element {
                               styles.contucts,
                               styles['w-inline-block']
                             )}
-                            disabled={netlify.submitting || errors.email}
+                            disabled={
+                              netlify.submitting ||
+                              errors.name ||
+                              errors.email ||
+                              errors.message
+                            }
                           >
                             <span
                               className={clsx(styles.arrow_b, styles._3)}
@@ -343,17 +416,11 @@ export default function Home(): JSX.Element {
                             <span
                               className={clsx(styles['text-block'], styles._3)}
                             >
-                              Subscribe
+                              Send
                             </span>
                           </button>
                           <div className={styles['div-block-4']}></div>
                         </div>
-                        <input
-                          type="hidden"
-                          name="referrer_url"
-                          id="referrer_url"
-                          value={values.referrer_url}
-                        />
                       </>
                     )}
                   </NetlifyFormComponent>
