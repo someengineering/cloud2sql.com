@@ -35,7 +35,7 @@
     "@octokit/core": "4.2.1",
     "a11y-react-emoji": "1.2.0",
     "clsx": "1.2.1",
-    "formik": "2.4.0",
+    "formik": "2.4.2",
     "netlify-plugin-cache": "1.0.3",
     "prism-react-renderer": "2.0.4",
     "react": "18.2.0",
