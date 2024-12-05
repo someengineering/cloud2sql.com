@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Docusaurus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build website
+        run: yarn build
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+#  search-index:
+#    name: Update the Search Index
+#    needs: deploy
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Trigger Algolia crawl
+#        uses: algolia/algoliasearch-crawler-github-actions@v1
+#        with:
+#          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+#          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+#          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+#          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+#          site-url: https://fixinventory.org
+#          crawler-name: inventory-fix
