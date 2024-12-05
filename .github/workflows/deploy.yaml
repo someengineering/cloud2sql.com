@@ -39,17 +39,17 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-#  search-index:
-#    name: Update the Search Index
-#    needs: deploy
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Trigger Algolia crawl
-#        uses: algolia/algoliasearch-crawler-github-actions@v1
-#        with:
-#          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
-#          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
-#          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
-#          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
-#          site-url: https://fixinventory.org
-#          crawler-name: inventory-fix
+  search-index:
+    name: Update the Search Index
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Algolia crawl
+        uses: algolia/algoliasearch-crawler-github-actions@v1
+        with:
+          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          site-url: https://cloud2sql.com
+          crawler-name: cloud2sql
